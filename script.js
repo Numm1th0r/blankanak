@@ -35,7 +35,8 @@ function unlock() {
   }, 300);
 }
 
-["pointerdown", "pointerup", "mousedown", "mouseup", "touchend", "keydown", "keyup", "click"].forEach(function (ev) {
+// only clicks / taps start it, key presses don't
+["pointerdown", "pointerup", "mousedown", "mouseup", "touchend", "click"].forEach(function (ev) {
   document.addEventListener(ev, unlock, { capture: true });
 });
 
@@ -59,8 +60,9 @@ document.addEventListener("contextmenu", function (e) {
   if (!mobileCheck()) window.open("child.html", "_blank", POPUP_FEATURES);
 }, false);
 
-// any key -> another trololo window
+// any key -> another trololo window (only after the gift was opened)
 document.addEventListener("keydown", function (e) {
+  if (!unlocked) return;
   if (!mobileCheck()) window.open("child.html", "_blank", POPUP_FEATURES);
   e.preventDefault();
 });
