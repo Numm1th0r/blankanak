@@ -4,11 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YOU GOT RICKROLLED</title>
+  <title>*~* Blankának egy AJÁNDÉK!!! *~*</title>
+  <meta property="og:title" content="*~* Blankának egy AJÁNDÉK!!! *~*">
+  <meta property="og:description" content="Nyisd ki!!! 🎁">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       cursor: url("rick.PNG"), auto;
@@ -23,62 +26,6 @@
       padding-bottom: 10px;
     }
     .center { text-align: center; }
-    #gift {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      padding: 16px;
-      box-sizing: border-box;
-      text-align: center;
-      color: #fff;
-      cursor: pointer;
-      background: radial-gradient(circle at 50% 40%, #ff4fa3 0%, #b0127a 45%, #3a0645 100%);
-      user-select: none;
-      -webkit-user-select: none;
-      transition: opacity .25s ease;
-    }
-    #gift.gone { opacity: 0; pointer-events: none; }
-    #gift .box-emoji {
-      font-size: clamp(110px, 28vw, 240px);
-      line-height: 1;
-      animation: wiggle 1.2s ease-in-out infinite;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,.35));
-    }
-    #gift h1 {
-      margin: 0;
-      font-size: clamp(34px, 8vw, 84px);
-      line-height: 1.05;
-      text-shadow: 0 4px 18px rgba(0,0,0,.35);
-    }
-    #gift button {
-      font: inherit;
-      font-size: clamp(22px, 5vw, 40px);
-      font-weight: bold;
-      padding: 18px 48px;
-      border: 0;
-      border-radius: 999px;
-      color: #b0127a;
-      background: #fff;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      animation: pulse 1.4s ease-in-out infinite;
-    }
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(0) scale(1); }
-      20% { transform: rotate(-10deg) scale(1.05); }
-      40% { transform: rotate(10deg) scale(1.05); }
-      60% { transform: rotate(-6deg) scale(1.02); }
-      80% { transform: rotate(6deg) scale(1.02); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
     #videorickroll {
       display: block;
       width: 100%;
@@ -86,13 +33,97 @@
       height: auto;
       margin: 20px auto;
     }
+
+    /* ===== 2000s gift page ===== */
+    #gift {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      overflow: auto;
+      background: #000066 url("stars.gif");
+      image-rendering: pixelated;
+      color: #ffff00;
+      font-family: "Comic Sans MS", "Comic Neue", "Chalkboard SE", cursive;
+      cursor: auto;
+    }
+    #gift marquee {
+      background: #ff00ff;
+      color: #ffff00;
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 3px ridge #ffff00;
+      border-bottom: 3px ridge #ffff00;
+      padding: 3px 0;
+    }
+    #gift table.main {
+      margin: 18px auto;
+      max-width: 620px;
+      width: calc(100% - 24px);
+      background: #000080;
+      border: 6px ridge #ff66ff;
+    }
+    #gift td { text-align: center; padding: 12px; }
+    #gift .blink { animation: blink 1s steps(1) infinite; color: #ff0000; font-size: 26px; font-weight: bold; }
+    #gift h1 { font-size: 30px; margin: 10px 0; text-shadow: 2px 2px 0 #000; }
+    #gift .q { font-size: 24px; color: #00ff00; text-shadow: 2px 2px 0 #000; }
+    #gift img.ajandek { width: 168px; height: 156px; image-rendering: pixelated; }
+    #gift .w98 {
+      font-family: "MS Sans Serif", Tahoma, Verdana, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+      background: #c0c0c0;
+      border: 4px outset #ffffff;
+      padding: 10px 22px;
+      cursor: pointer;
+      margin: 8px 0;
+    }
+    #gift .w98:active { border-style: inset; }
+    #gift .divider { color: #ff99ff; letter-spacing: 2px; margin: 8px 0; }
+    #gift .counter {
+      display: inline-block;
+      background: #000;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px inset #808080;
+      padding: 1px 4px;
+      letter-spacing: 3px;
+    }
+    #gift .small { font-family: "Times New Roman", Times, serif; font-size: 13px; color: #ffffff; }
+    #gift .small a { color: #00ffff; }
+    #gift .new { color: #ff0000; background: #ffff00; font-size: 12px; font-weight: bold; padding: 0 3px; animation: blink .6s steps(1) infinite; }
+    @keyframes blink { 50% { visibility: hidden; } }
+    .sparkle {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      font-size: 16px;
+      line-height: 1;
+      animation: fall .9s linear forwards;
+    }
+    @keyframes fall { to { transform: translateY(40px); opacity: 0; } }
   </style>
 </head>
 <body>
   <div id="gift">
-    <div class="box-emoji">🎁</div>
-    <h1>Készen állsz az<br>ajándékodra?</h1>
-    <button type="button">IGEN! 🎉</button>
+    <marquee scrollamount="7">★☆★ ÜDVÖZÖLLEK BLANKA HONLAPJÁN!!! ★☆★ VALAKI KÜLDÖTT NEKED VALAMIT!!! ★☆★ NE ZÁRD BE AZ OLDALT!!! ★☆★</marquee>
+
+    <table class="main" cellspacing="0">
+      <tr><td>
+        <div class="blink">!!! FIGYELEM !!!</div>
+        <h1 class="rainbow">Blankának AJÁNDÉK érkezett!!!</h1>
+        <img class="ajandek" src="gift.gif" alt="ajándék">
+        <div class="q">Készen állsz az ajándékodra???</div>
+        <div class="divider">~*~*~*~*~*~*~*~*~*~*~*~*~</div>
+        <button type="button" class="w98">&gt;&gt; KATTINTS IDE AZ AJÁNDÉKÉRT!!! &lt;&lt;</button>
+        <div class="divider">~*~*~*~*~*~*~*~*~*~*~*~*~</div>
+        <p class="small">Te vagy a(z) <span class="counter" id="counter">000000</span>. látogató!!! <span class="new">ÚJ!</span></p>
+        <p class="small">Az oldal Internet Explorer 6.0-val, 800x600 felbontásban néz ki a legjobban.<br>
+        Utoljára frissítve: 2004.03.14. &nbsp;|&nbsp; <a href="#" onclick="return false">Írj a vendégkönyvembe!!!</a></p>
+      </td></tr>
+    </table>
   </div>
 
   <div class="box">
@@ -104,6 +135,37 @@
     </video>
   </div>
 
+  <script>
+    // rainbow letters, the 2004 way
+    (function () {
+      var colors = ["#ff0000", "#ff9900", "#ffff00", "#00ff00", "#00ffff", "#ff66ff"];
+      document.querySelectorAll(".rainbow").forEach(function (el) {
+        var t = el.textContent, html = "", i = 0;
+        for (var c of t) {
+          html += c === " " ? " " : '<span style="color:' + colors[i++ % colors.length] + '">' + c + "</span>";
+        }
+        el.innerHTML = html;
+      });
+      // fake visitor counter
+      var n = 1337 + Math.floor((Date.now() / 36e5) % 9000);
+      document.getElementById("counter").textContent = String(n).padStart(6, "0");
+      // sparkle cursor trail
+      var chars = ["✦", "★", "✧", "*"], cols = ["#ffff00", "#ff66ff", "#00ffff", "#ffffff"];
+      var last = 0;
+      document.addEventListener("mousemove", function (e) {
+        if (!document.getElementById("gift") || Date.now() - last < 40) return;
+        last = Date.now();
+        var s = document.createElement("span");
+        s.className = "sparkle";
+        s.textContent = chars[Math.floor(Math.random() * chars.length)];
+        s.style.color = cols[Math.floor(Math.random() * cols.length)];
+        s.style.left = (e.clientX + 6) + "px";
+        s.style.top = (e.clientY + 6) + "px";
+        document.body.appendChild(s);
+        setTimeout(function () { s.remove(); }, 900);
+      });
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
