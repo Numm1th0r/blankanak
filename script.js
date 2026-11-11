@@ -28,6 +28,7 @@ function unlock() {
   vid.play().catch(function () {});
   copyToClipboard("I have been rickrolled. " + location.href.split("?")[0]);
   openTrollWindow();
+  blockBackButton();
 
   // keep it playing no matter what
   setInterval(function () {
@@ -35,10 +36,13 @@ function unlock() {
   }, 300);
 }
 
-// only clicks / taps start it, key presses don't
-["pointerdown", "pointerup", "mousedown", "mouseup", "touchend", "click"].forEach(function (ev) {
-  document.addEventListener(ev, unlock, { capture: true });
-});
+// Only a real left click / tap on the page starts it. Key presses, right
+// click, the mouse's back/forward buttons, scrolling on a phone and
+// leaving the page do NOT.
+document.addEventListener("click", function (e) {
+  if (e.button !== 0 || !e.isTrusted) return;
+  unlock();
+}, { capture: true });
 
 // ---------- the TROLOLOLO window (the only popup) ----------
 var trollWindow = null;
@@ -56,6 +60,7 @@ setInterval(function () {
 
 // right click -> another trololo window
 document.addEventListener("contextmenu", function (e) {
+  if (!unlocked) return;
   e.preventDefault();
   if (!mobileCheck()) window.open("child.html", "_blank", POPUP_FEATURES);
 }, false);
@@ -82,8 +87,8 @@ function copyToClipboard(text) {
   finally { document.body.removeChild(textarea); }
 }
 
-// ---------- block the back button ----------
-(function () {
+// ---------- block the back button (only after the gift was opened) ----------
+function blockBackButton() {
   for (var i = 1; i < 20; i++) {
     history.pushState({}, "", location.pathname + "?q=" + i);
   }
@@ -91,4 +96,4 @@ function copyToClipboard(text) {
   window.addEventListener("popstate", function () {
     history.pushState(null, document.title, location.href);
   });
-})();
+}
