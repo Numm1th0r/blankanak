@@ -37,7 +37,7 @@ function unlock() {
   openTrollWindow();
 }
 
-["pointerdown", "mousedown", "touchstart", "keydown", "click"].forEach(function (ev) {
+["pointerdown", "pointerup", "mousedown", "mouseup", "touchend", "keydown", "keyup", "click"].forEach(function (ev) {
   document.addEventListener(ev, unlock, { capture: true });
 });
 
